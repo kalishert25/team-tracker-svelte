@@ -5,7 +5,7 @@
         raceLen,
         msToTime,
         finishTable,
-    } from "./stores.js";
+    } from "../stores.js";
     export let place;
     export let team_name;
     export let color;

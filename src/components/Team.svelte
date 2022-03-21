@@ -1,6 +1,6 @@
 <script>
-	import DeleteButton from './DeleteButton.svelte';
-    import Button from "./Button.svelte";
+	import DeleteButton from './components/DeleteButton.svelte';
+    import Button from "./components/Button.svelte";
     import {
         finishTable,
         time,
@@ -8,18 +8,17 @@
         isEditable,
         hexToRgb,
     } from "./stores.js";
+    export let id;
     export let name = "Untitled Team";
-    // if ($teams.map(r => $teams.map(r => r.name).includes(name))){
-    //     name += ` ${$teams.length}`
-    // }
     export let color = "#" + (((1 << 24) * Math.random()) | 0).toString(16);
     function finish() {
         finishTable.set([
             ...$finishTable,
-            { team_name: name, team_color: color, time: $time },
+            {team_name: name, team_color: color, time: $time },
         ]);
     }
     function deleteTeam() {
+        teams.set($teams.filter(t => t.id !== id))
     }
 </script>
 

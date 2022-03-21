@@ -1,16 +1,15 @@
 import {
     writable
 } from 'svelte/store';
-
+export const uniqueId = (length = 16) => {
+    return parseInt(Math.ceil(Math.random() * Date.now()).toPrecision(length).toString().replace(".", ""))
+}
 export const isRunning = writable(false);
 export const isEditable = writable(true);
 export const finishTable = writable([]);
 export const raceLen = writable([5, "kilometers"]);
 export const raceName = writable("Untitled Race");
-export const teams = writable([{
-    name: "Test",
-    color: "#f0f0f0"
-}]);
+export const teams = writable([]);
 export const time = writable(0)
 export const editableTableNames = writable(true)
 export function msToTime(s, include_ms = true) {
@@ -37,12 +36,12 @@ export function msToTime(s, include_ms = true) {
 }
 // FIXME 
 export const getWinningTeam = (ft) => {
-        const getMax = object => {
-            return Object.keys(object).filter(x => {
-                return object[x]== Math.max.apply(null,
-                    Object.values(object));
-            });
-        };
+    const getMax = object => {
+        return Object.keys(object).filter(x => {
+            return object[x] == Math.max.apply(null,
+                Object.values(object));
+        });
+    };
     console.log(ft)
     const teamScores = {}
     for (let runner of ft) {
@@ -50,15 +49,15 @@ export const getWinningTeam = (ft) => {
             teamScores[runner.team_name] = []
         }
         teamScores[runner.team_name].push(ft.length)
-     
+
 
     }
     let max = 0
     if (ft.length > 0) {
         console.log(getMax(teamScores), teamScores)
     }
-        
-    
+
+
     return "Noone"
 }
 export const hexToRgb = hex =>

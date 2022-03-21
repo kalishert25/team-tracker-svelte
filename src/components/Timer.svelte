@@ -31,27 +31,19 @@
     //Utility func to convert raw ms to (HH):MM:SS.sss
 </script>
 
-<svelte:head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
-        rel="stylesheet"
-    />
-</svelte:head>
-
 <main>
     <h1>{msToTime(t - starting_time)}</h1>
 </main>
 
 <style>
     h1 {
-        letter-spacing: 3px;
-        --col: black;
-        /*         border:1px solid var(--col); */
-        color: var(--col);
+        margin-top: 0.8em;
+        font-family: "Barlow";
+        font-style: normal;
+        font-weight: 500;
+        
+        color: #1f2d37;
         text-align: center;
-        font-size: 6em;
-       
+        font-size: 5em;
     }
 </style>

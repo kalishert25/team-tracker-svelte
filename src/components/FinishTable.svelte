@@ -2,7 +2,7 @@
     import {
         finishTable,
         raceLen,
-    } from "./stores.js";
+    } from "../stores.js";
     import Runner from "./Runner.svelte";
 </script>
 

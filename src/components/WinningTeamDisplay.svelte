@@ -1,5 +1,5 @@
 <script>
-    import {getWinningTeam, finishTable} from "./stores.js";
+    import {getWinningTeam, finishTable} from "../stores.js";
     
     $: winningTeam = getWinningTeam($finishTable)
 </script>

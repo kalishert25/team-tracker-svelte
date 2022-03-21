@@ -1,5 +1,5 @@
 <script>
-	import FinishTable from './FinishTable.svelte';
+	import FinishTable from './components/FinishTable.svelte';
     import {
         isEditable,
         isRunning,
@@ -9,7 +9,7 @@
         teams,
         editableTableNames,
     } from "./stores.js";
-import Team from './Team.svelte';
+import Team from './components/Team.svelte';
 </script>
 
 <div class="mt-3">
@@ -19,7 +19,7 @@ import Team from './Team.svelte';
 
     <div class="flex-container row mx-1">
         {#each $teams as team}
-            <Team name={team.name} color={team.color} />
+            <Team id={team.id} name={team.name} color={team.color} />
         {/each}
     </div>
     <!-- <WinningTeamDisplay /> -->

@@ -1,5 +1,5 @@
 <script>
-    import { teams, raceLen, raceName } from "./stores.js";
+    import { teams, raceLen, raceName, uniqueId } from "./stores.js";
     let teamInterface = false;
     let r_len = $raceLen[0];
     let unit_multiplier = $raceLen[1];
@@ -7,13 +7,18 @@
         raceLen.set([r_len ?? 1, unit_multiplier]);
         console.log($raceLen);
     }
+ 
     let currTeamName;
     let currTeamCol;
     function addTeam() {
+        
         const newTeam = new Team(currTeamName, currTeamCol)
         function Team(name, color) {
+            this.id  = uniqueId()
             this.name = name;
             this.color = color;
+            
+            
         }
 
         teamInterface = false;

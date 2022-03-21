@@ -1,10 +1,10 @@
 <script>
-    import Runner from "./Runner.svelte";
-    import Timer from "./Timer.svelte";
-    import Dialog from "./Dialog.svelte";
-    import Team from "./Team.svelte";
+    import Runner from "./components/Runner.svelte";
+    import Timer from "./components/Timer.svelte";
+    import Dialog from "./components/Dialog.svelte";
+    import Team from "./components/Team.svelte";
     import Modal from "svelte-simple-modal";
-    import Button from "./Button.svelte";
+    import Button from "./components/Button.svelte";
     import {
         isEditable,
         isRunning,
